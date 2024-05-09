@@ -1,0 +1,281 @@
+/* Menu */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Kaushan+Script&family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    line-height: 1.5;
+    font-family: var(--Mont);
+    width: 100%;
+    height: 100%;
+    
+    background: linear-gradient(rgba(1, 30, 3, 0.459), rgba(1, 30, 3, 0.459)), url(../imagge_doc/acceuil_img/fondecran.jpg);
+    /*background-color: rgb(113, 165, 173) ;*/
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+/*nav barre*/
+.nav_bar{
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.nav_bar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    z-index: 100;
+
+}
+.nav_bar ul li a{
+    text-decoration: none;
+    color: wheat;
+    text-transform: uppercase;
+}
+.nav_bar ul ::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: rgb(255, 166, 0);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s ease-out;
+}
+.nav_bar ul li:hover::after{
+    width: 100%;
+
+}
+/*fin nav barre*/
+:root{
+    --Inter: 'Inter', sans-serif;
+    --Kaushan: 'Kaushan Script', cursive;
+    --Mont: 'Montserrat', sans-serif;
+}
+.menu{
+    margin: rem 0;
+    position: absolute;
+    width: 90%;
+    border-radius: 50px;
+    margin-left: 5%;
+    padding-top: 50px;
+}
+.menu-container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0rem 1rem;
+    padding-bottom: 10rem;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.menu-head{
+    text-align: center;
+    height: 90px;
+    margin-top: -40px;
+}
+.menu-head h2{
+    font-family: var(--Kaushan);
+    font-size: 3.6rem;
+    color: wheat;
+    box-shadow: 0 0 16px -4px rgba(255, 191, 88);
+}
+.menu-head p{
+    font-weight: 300;
+    padding: 1.8rem 0;
+}
+.menu-btns{
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: center;
+}
+.menu-btn{
+    font-family: var(--Inter);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: white   ;
+    display: block;
+    margin: 0 1rem;
+    cursor: pointer;
+    outline: 0;
+    transition: opacity 0.4s ease-out;
+}
+.menu-btn::after{
+    content: "";
+    display: block;
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ff9505;
+    margin-top: 0.5rem;
+    width: 0;
+    transition: width 0.4s ease-out;
+}
+.menu-btn:hover::after{
+    width: 100%;
+}
+.menu-btn:hover{
+    opacity: 0.8;
+}
+
+
+.active-btn{
+    color: wheat;
+}
+.plat-models{
+    margin: 2rem 0;
+}
+.plat-model{
+    border-radius: 20px;
+    overflow: hidden;
+    background: wheat;
+    color: #000;
+    margin: 0.6rem 0;
+    box-shadow: 0 0 16px -4px rgba(255, 191, 88, 0.764);
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.plat-img img{
+    border-radius: 20px;
+    box-shadow: 0 0 16px -4px rgb(0, 0, 0,1);
+}
+.plat{
+    padding: 1rem;
+}
+.nom-plat{
+    font-family: var(--Inter);
+    color: #ff9505;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.line{
+    width: 100px;
+    height: 3px;
+    background: #ff9505;
+}
+.prix-plat{
+    padding: 0.4rem 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+    opacity: 0.8;
+    text-align: right;
+    padding-right: 50px;
+    
+}
+.note{
+    display: flex;
+    list-style: none;
+    text-align: right;
+    padding-right: 50px;
+    float: right;
+    margin-right: -20px; 
+}
+.note .fa-star{
+    margin-right: 0.4rem;
+    color: rgba(1, 30, 3);
+}
+.categorie{
+    padding-top: 0.2rem;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: var(--Inter);
+}
+.categorie span{
+    font-weight: 500;
+}
+
+@media screen and (min-width: 600px){
+    .plat-model{
+        display: grid;
+        grid-template-columns: 30% auto;
+        align-items: center;
+        padding: 1rem;
+        column-gap: 1rem;
+    }
+    .plat{
+        padding: 0;
+    }
+}
+
+
+@media screen and (min-width: 800px){
+    .plats-models{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .plat-model{
+display: grid;
+grid-template-columns: 30% auto;
+align-items: center;
+padding: 1rem;
+column-gap: 1rem;
+
+    }
+}
+
+/*bouton commender*/ 
+/* Style général pour tous les boutons */
+.Commander{
+    background: linear-gradient(to bottom right, rgba(1, 30, 3), rgb(1, 61, 5)) !important;
+    padding-top: 10%;
+}
+.Commander{
+    padding: 7px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+
+
+}
+/* Style pour les boutons de type "Commander" */
+.Commander {
+    font-size: 14px;
+    font-weight: bold; 
+    color: wheat;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.2s;
+    border: 2px solid rgba(1, 30, 3, 0.459) ;
+}
+
+/* Style au survol pour les boutons de type "Commander" */
+.Commander:hover {
+    background: linear-gradient(to bottom right, #ff9505, #fdb249) !important;
+    border: 2px solid #ff9505 ;
+    box-shadow: 10px 5px 5px rgba(255, 151, 5, 0.468);
+    color: wheat;
+    text-align: center;
+    font-size: 20px;
+}
